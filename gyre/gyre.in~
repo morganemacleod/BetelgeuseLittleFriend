@@ -1,0 +1,55 @@
+&constants
+/
+
+&model
+  model_type = 'EVOL'
+  file = 'betelgeuse.gyre'
+  file_format = 'MESA'
+/
+
+&mode
+        l = 0                ! Harmonic degree
+        m = 0
+        tag = 'l=0'
+        n_pg_min = -3 
+        n_pg_max = 3 ! max radial order
+/
+
+&rot
+	Omega_rot_source='UNIFORM'
+	Omega_rot = 0.0
+	Omega_rot_units='NONE'
+/
+
+&osc
+  !nonadiabatic = .FALSE.
+  !inner_bound='ZERO_R'
+/
+
+&num
+    diff_scheme='COLLOC_GL6'
+/
+
+&scan
+  grid_type = 'LINEAR'
+  freq_min = 0.8
+  freq_max = 10.0
+  n_freq = 20
+  freq_units='NONE'
+/
+
+&grid
+    !x_i = 0.2
+/
+
+&ad_output
+        summary_file = 'summary.txt'                            ! File name for summary file
+        summary_file_format = 'TXT'                             ! Format of summary file
+        summary_item_list = 'M_star,R_star,L_star,Omega_rot_ref,l,m,n_pg,n_p,n_g,omega,E_norm,freq,freq_units,freq_frame' ! Items to appear in summary file
+        detail_template="mode.%L_%M_%N.txt"                           ! File-name template for mode files
+        detail_file_format = 'TXT'                                ! Format of mode files
+        detail_item_list = 'l,n_pg,omega,x,xi_r,xi_h,rho'         ! Items to appear in mode files
+/
+
+&nad_output
+/

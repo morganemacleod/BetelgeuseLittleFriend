@@ -1,0 +1,62 @@
+&constants
+/
+
+&model
+  model_type = 'EVOL'
+  file = 'betelgeuse.gyre'
+  file_format = 'MESA'
+/
+
+&mode
+        l = 0                ! Harmonic degree
+        m = 0
+        tag = 'l=0'
+        n_pg_min = 1 
+        n_pg_max = 1 ! max radial order
+/
+
+&rot
+	Omega_rot_source='UNIFORM'
+	Omega_rot = 0.0
+	Omega_rot_units='NONE'
+/
+
+&osc
+  nonadiabatic = .TRUE.
+/
+
+&num
+    diff_scheme='COLLOC_GL2'
+/
+
+&scan
+  grid_type = 'LINEAR'
+  freq_min = 0.8
+  freq_max = 20.0
+  n_freq = 50
+  freq_units='NONE'
+/
+
+&grid
+    !x_i = 0.2
+/
+
+&ad_output
+        summary_file = 'summary.txt'                            ! File name for summary file
+        summary_file_format = 'TXT'                             ! Format of summary file
+        summary_item_list = 'M_star,R_star,L_star,Omega_rot_ref,l,m,n_pg,n_p,n_g,omega,E_norm,freq,freq_units,freq_frame' ! Items to appear in summary file
+        detail_template="mode.%L_%M_%N.txt"                           ! File-name template for mode files
+        detail_file_format = 'TXT'                                ! Format of mode files
+        detail_item_list = 'l,n_pg,omega,x,xi_r,xi_h,rho'         ! Items to appear in mode files
+/
+
+&nad_output
+        summary_file = 'summary_nad.txt'                            ! File name for summary file
+        summary_file_format = 'TXT'                             ! Format of summary file
+        summary_item_list = 'M_star,R_star,L_star,Omega_rot_ref,l,m,n_pg,n_p,n_g,omega,E_norm,freq,freq_units,freq_frame' ! Items to appear in summary file
+        detail_template="mode.%L_%M_%N.txt"                           ! File-name template for mode files
+        detail_file_format = 'TXT'                                ! Format of mode files
+        detail_item_list = 'l,n_pg,omega,x,xi_r,xi_h,rho'         ! Items to appear in mode files
+	freq_units='CYC_PER_DAY'
+	!freq_units='RAD_PER_SEC'
+/

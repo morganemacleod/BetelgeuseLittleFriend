@@ -41,6 +41,15 @@ RV_cape['RV_err'] = 1.0
 RV_cape['source'] = 'Cape v10'
 print(RV_cape)
 
+# Bottlinger1911 (Potsdam)
+RV_Bot = Table.read('RV_Bottlinger1911.dat',format='ascii.csv',header_start=1,names=['date','RV'])
+RV_Bot['JD']=Time(RV_Bot['date'], format='iso').jd
+RV_Bot['RV_err'] = 1.0
+RV_Bot['source'] = 'Bottlinger1911'
+print(RV_Bot)
+
+
+
 # Mt Wilson
 RV_mw = Table.read('RV_MtWilson_Sanford1933.dat',format='ascii.csv',header_start=2,names=['JD','RV'],)
 RV_mw['RV_err'] = 1.0
@@ -106,6 +115,7 @@ print(RV_s)
 def join_col(col):
     return np.concatenate( (RV_lick[col],
                      RV_cape[col],
+                     RV_Bot[col],
                      RV_mw[col],
                      RV_a[col],
                      RV_w[col],

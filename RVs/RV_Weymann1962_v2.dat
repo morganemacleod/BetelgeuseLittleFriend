@@ -1,0 +1,17 @@
+## Radial velocities from https://ui.adsabs.harvard.edu/abs/1962ApJ...136..844W/abstract
+## Table 7
+## Dates from Carnegie Plate Archive images, c. Kit Whitten
+## Date for 2227 is Jan 1940, day estimated at mid-month
+## Date for 14129 is Dec 1960, day estimated at late-month
+## Dates for 14136,14142 are also estimated within Jan 1960
+## 
+## Transcribed by MM, 2024
+plate, date, RV
+2227, 1940-01-15 ,21.2
+9012, 1953-11-24 ,23.7
+13148, 1960-01-07, 19.9
+13153, 1960-01-08 ,20.1
+14129, 1960-12-25 ,16.6
+14136, 1961-01-01 ,16.3
+14142, 1961-01-03 ,16.1
+14183, 1961-01-22 ,17.3

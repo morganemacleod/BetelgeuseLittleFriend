@@ -66,7 +66,9 @@ RV_a['source'] = 'Adams1956'
 print(RV_a)
 
 # Weymann
-RV_w = Table.read('RV_Weymann1962.dat',format='ascii',names=['JD','RV'])
+#RV_w = Table.read('RV_Weymann1962.dat',format='ascii',names=['JD','RV'])
+RV_w = Table.read('RV_Weymann1962_v2.dat',format='ascii')
+RV_w['JD']=Time(RV_w['date'], format='iso').jd
 RV_w['RV_err'] = 0.6
 RV_w['source'] = 'Weymann1962'
 print(RV_w)
@@ -110,7 +112,8 @@ RV_gray['source'] = 'Gray2008'
 print(RV_gray)
 
 # STELLA 
-RV_s = Table.read('RV_STELLA_sorted_2023.dat',format='ascii',names=['JD','RV','RV_err'])
+RV_s = Table.read('RV_STELLA_2024.dat',format='ascii',names=['JD','RV','RV_err'])
+RV_s['JD']+= 2454700
 RV_s['source'] = 'STELLA'
 print(RV_s)
 

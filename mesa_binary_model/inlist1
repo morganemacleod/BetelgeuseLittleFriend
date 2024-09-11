@@ -39,7 +39,7 @@
       initial_Z = 0.02
 
 	! when to stop
-	photosphere_r_upper_limit = 800.0
+	!photosphere_r_upper_limit = 800.0
 	when_to_stop_rtol = 0.0
 	when_to_stop_atol = 0.01
 	!Teff_lower_limit = 3600.0

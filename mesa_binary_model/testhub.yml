@@ -1300,3 +1300,18 @@
       solver_calls_made:         1128
       solver_calls_failed:            6
       solver_iterations:         3446
+    - inlist: inlist
+    - inlist: inlist
+    - inlist: inlist
+    - inlist: inlist
+      runtime_minutes:   3.87
+      model_number:          343
+      star_age:     8.1513118846938992E+06
+      num_retries:            3
+      log_rel_run_E_err:        -8.2983032824857137
+      steps:          736
+      retries:            3
+      redos:            0
+      solver_calls_made:         1094
+      solver_calls_failed:            3
+      solver_iterations:         3316
